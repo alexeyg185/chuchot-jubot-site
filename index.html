@@ -3,35 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <title>Chuchot & Jubot Productions</title>
+
+  <!-- Favicon (icon for the browser tab) -->
+  <link rel="icon" type="image/png" href="resources/images/icon.png" />
+
+  <!-- Example: Including Google Fonts and Font Awesome -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+  />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <!-- Header / Logo Section -->
+    <!-- Header -->
     <header>
-      <h1 class="logo-text">Chuchot & Jubot Productions</h1>
-      <p class="welcome">Welcome to the Show!</p>
-      <!-- New message about sound -->
-      <p class="sound-message">Please turn your sound on for the full experience!</p>
+      <!-- Main Headline: bigger & bolder -->
+      <h1 class="headline">Welcome to the Show!</h1>
+
+      <!-- Sub-brand: smaller, stylish text shadow -->
+      <h2 class="brand-name">Chuchot & Jubot Productions</h2>
+
+      <!-- Sound Instructions: with emojis at start & end -->
+      <p class="sound-message">🔊 Please turn your sound on for the full experience! 🔊</p>
     </header>
 
     <!-- Buttons Section -->
     <div class="buttons">
-      <button id="chucha-btn">
-        <img
-          class="btn-img"
-          src="resources/buttons/chucha_button.png"
-          alt="Get Chucha"
-        />
-        <span>Get Chucha</span>
+      <!-- "Choose Chucha" button -->
+      <button id="chucha-btn" class="char-btn chucha-btn">
+        <!-- Heart icon using Font Awesome -->
+        <i class="fa-solid fa-heart"></i>
+        <span>Choose Chucha</span>
       </button>
-      <button id="juba-btn">
-        <img
-          class="btn-img"
-          src="resources/buttons/juba_button.png"
-          alt="Get Juba"
-        />
-        <span>Get Juba</span>
+
+      <!-- "Choose Juba" button -->
+      <button id="juba-btn" class="char-btn juba-btn">
+        <!-- Coins icon using Font Awesome -->
+        <i class="fa-solid fa-coins"></i>
+        <span>Choose Juba</span>
       </button>
     </div>
 
@@ -44,29 +60,18 @@
       />
     </div>
 
-    <!-- Attribution / Credits -->
-    <footer>
-      <p>
-        The 3D model "Borat" is created by
-        <a href="https://sketchfab.com/LeVieux.Lzo">LeVieux.Lzo</a> and is
-        licensed under a
-        <a href="https://creativecommons.org/licenses/by/4.0/"
-          >Creative Commons Attribution 4.0 International License</a
-        >.
-      </p>
-      <p>
-        Source:
-        <a href="https://sketchfab.com/3d-models/borat-af89b374a0ad408f9e7ec23046259c82"
-          >https://sketchfab.com/3d-models/borat-af89b374a0ad408f9e7ec23046259c82</a
-        >
-      </p>
-    </footer>
+    <!-- Hidden audio element for playing random mp3s -->
+    <audio id="audio" hidden></audio>
+
+    <!-- Small credits text at bottom corner -->
+    <div class="credits">
+      Credits: “Borat” model by
+      <a href="https://sketchfab.com/LeVieux.Lzo" target="_blank">LeVieux.Lzo</a>
+      (<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a>)
+    </div>
   </div>
 
-  <!-- Hidden audio element -->
-  <audio id="audio" hidden></audio>
-
-  <!-- Your script for random sounds and GIF swap -->
+  <!-- Main script for random sounds and GIF swap -->
   <script src="script.js"></script>
 </body>
 </html>

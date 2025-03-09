@@ -7,106 +7,155 @@
   box-sizing: border-box;
 }
 
-/* Body styling for a dark theme */
+/* Use a neutral background, dark but not pure black */
 body {
-  background-color: #121212; /* dark grey shade */
-  color: #ffffff;           /* white text */
+  background-color: #1c1c1c;
+  color: #d1d1d1; /* lighter gray for better contrast */
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* ensure the page covers full height */
-  padding: 1rem;     /* add a bit of padding for smaller screens */
+  min-height: 100vh;
+  padding: 2rem;
 }
 
+/* Container: center text, add spacing */
 .container {
   text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* Header */
-header .logo-text {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-header .welcome {
-  font-size: 1.2rem;
+/* Main Headline */
+.headline {
+  font-family: "Press Start 2P", Arial, sans-serif; /* or any other game-like font */
+  font-size: 3rem;
+  color: #f0f0f0;
   margin-bottom: 1rem;
-  opacity: 0.8;
+  line-height: 1.2;
 }
 
-.sound-message {
-  font-style: italic;
-  color: #ffc107; /* a yellowish highlight */
+/* Sub-brand name / smaller text */
+.brand-name {
+  font-size: 1.3rem;
+  color: #cfcfcf;
   margin-bottom: 2rem;
+  text-shadow: 2px 2px 5px #000; /* subtle 3D effect */
+}
+
+/* Sound instructions */
+.sound-message {
+  font-size: 1.1rem;
+  font-weight: 600; /* bolder look */
+  color: #ffbb44;   /* a warmer accent color */
+  margin-bottom: 3rem;
+  font-style: italic;
 }
 
 /* Buttons Section */
 .buttons {
   display: flex;
   gap: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   justify-content: center;
 }
 
-/*
-   Each button has a fixed width & height so 
-   they stay the same size, even if images differ.
+/* 
+   General button styling:
+   - Larger radius for pill shape
+   - Subtle 3D effect via box-shadow
 */
-.buttons button {
-  width: 250px;
-  height: 100px;
-  background-color: #1e1e1e;
-  border: 2px solid #333;
-  border-radius: 5px;
+.char-btn {
+  width: 200px;
+  height: 70px;
+  border: none;
+  border-radius: 999px;      /* extreme rounding => pill shape */
   cursor: pointer;
   font-size: 1rem;
   color: #fff;
   display: inline-flex;
-  flex-direction: column; /* image above text */
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
+  text-transform: uppercase; /* optional style choice */
+  box-shadow: 
+    inset 1px 1px 2px rgba(255, 255, 255, 0.1),
+    2px 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
-.buttons button:hover {
-  background-color: #2a2a2a;
+/* Heart or coin icon in the button is a bit bigger */
+.char-btn i {
+  font-size: 1.2rem;
 }
 
-/* The images inside the buttons preserve aspect ratio */
-.btn-img {
-  max-width: 80%;
-  max-height: 60%;
-  height: auto;
-  margin-bottom: 5px;
+/* Hover effect: elevate the button slightly */
+.char-btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 1px 1px 2px rgba(255, 255, 255, 0.1),
+    4px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-/* GIF Container */
+/* Pressed/active effect: push down */
+.char-btn:active {
+  transform: translateY(1px);
+  box-shadow:
+    inset 1px 1px 5px rgba(0, 0, 0, 0.3),
+    1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Chucha Button: pinkish/purple gradient */
+.chucha-btn {
+  background: linear-gradient(
+    160deg,
+    #d94fc7 0%,
+    #b4359f 100%
+  );
+}
+
+/* Juba Button: golden gradient */
+.juba-btn {
+  background: linear-gradient(
+    160deg,
+    #e5c100 0%,
+    #c4a100 100%
+  );
+}
+
+/* GIF Container: more spacing for less cramped layout */
 .gif-container {
-  margin: 0 auto 2rem; /* extra bottom margin for spacing */
+  margin: 0 auto 3rem;
 }
 
+/* 
+   The main image (static or GIF):
+   - No border 
+   - Subtle glow via box-shadow
+*/
 .gif-container img {
-  width: 800px;   /* your desired original width */
-  height: 450px;  /* your desired original height */
+  width: 800px;  /* exact dimension */
+  height: 450px; /* exact dimension */
   display: block;
   margin: 0 auto;
-  border: 2px solid #333;
-  border-radius: 5px;
+  box-shadow: 0 0 40px rgba(255, 60, 60, 0.15); /* subtle glow */
 }
 
-/* Footer / Attribution */
-footer {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  line-height: 1.4;
+/* Credits in the bottom corner (small, but still visible) */
+.credits {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 0.7rem;
   opacity: 0.8;
 }
 
-footer a {
-  color: #ffc107; /* same highlight color as sound message */
+.credits a {
+  color: #ffbb44;
   text-decoration: none;
 }
 
-footer a:hover {
+.credits a:hover {
   text-decoration: underline;
 }
